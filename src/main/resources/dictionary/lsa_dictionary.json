@@ -1,0 +1,92 @@
+[
+    {
+        "sign": "HELLO",
+        "description": "Wave hand with palm facing forward, fingers spread",
+        "videoUrl": "signs/hello.mp4",
+        "tags": ["greeting", "basic", "common"]
+    },
+    {
+        "sign": "THANK_YOU",
+        "description": "Move flat hand from chin forward and down",
+        "videoUrl": "signs/thank_you.mp4",
+        "tags": ["gratitude", "basic", "common"]
+    },
+    {
+        "sign": "PLEASE",
+        "description": "Rub flat hand in circular motion on chest",
+        "videoUrl": "signs/please.mp4",
+        "tags": ["courtesy", "basic", "common"]
+    },
+    {
+        "sign": "YES",
+        "description": "Make fist and nod it up and down",
+        "videoUrl": "signs/yes.mp4",
+        "tags": ["affirmative", "basic", "common"]
+    },
+    {
+        "sign": "NO",
+        "description": "Index and middle finger extended, move side to side",
+        "videoUrl": "signs/no.mp4",
+        "tags": ["negative", "basic", "common"]
+    },
+    {
+        "sign": "HELP",
+        "description": "Closed thumb fist on one hand, lifted by flat palm of other hand",
+        "videoUrl": "signs/help.mp4",
+        "tags": ["assistance", "basic", "important"]
+    },
+    {
+        "sign": "WATER",
+        "description": "W hand shape tapped on chin",
+        "videoUrl": "signs/water.mp4",
+        "tags": ["drink", "basic", "necessity"]
+    },
+    {
+        "sign": "FOOD",
+        "description": "Bunched fingers to mouth",
+        "videoUrl": "signs/food.mp4",
+        "tags": ["eat", "basic", "necessity"]
+    },
+    {
+        "sign": "BATHROOM",
+        "description": "Shake 'T' hand between 'B' hand",
+        "videoUrl": "signs/bathroom.mp4",
+        "tags": ["necessity", "basic", "important"]
+    },
+    {
+        "sign": "FRIEND",
+        "description": "Hook index fingers together twice",
+        "videoUrl": "signs/friend.mp4",
+        "tags": ["relationship", "social", "common"]
+    },
+    {
+        "sign": "FAMILY",
+        "description": "Join hands in circle motion",
+        "videoUrl": "signs/family.mp4",
+        "tags": ["relationship", "social", "important"]
+    },
+    {
+        "sign": "LOVE",
+        "description": "Cross arms over chest",
+        "videoUrl": "signs/love.mp4",
+        "tags": ["emotion", "feeling", "important"]
+    },
+    {
+        "sign": "HAPPY",
+        "description": "Brush chest upward with both flat hands",
+        "videoUrl": "signs/happy.mp4",
+        "tags": ["emotion", "feeling", "common"]
+    },
+    {
+        "sign": "SAD",
+        "description": "Drag fingers down face from eyes",
+        "videoUrl": "signs/sad.mp4",
+        "tags": ["emotion", "feeling", "common"]
+    },
+    {
+        "sign": "TIRED",
+        "description": "Drop hands down from chest",
+        "videoUrl": "signs/tired.mp4",
+        "tags": ["feeling", "state", "common"]
+    }
+]
