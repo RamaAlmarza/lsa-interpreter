@@ -22,9 +22,14 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        // Load OpenCV native library
-        nu.pattern.OpenCV.loadShared();
-        logger.info("OpenCV native library loaded successfully");
+        // Initialize OpenCV (using JavaCV)
+        try {
+            org.bytedeco.javacpp.Loader.load(org.bytedeco.opencv.opencv_java.class);
+            logger.info("OpenCV native library loaded successfully");
+        } catch (Exception e) {
+            logger.error("Failed to load OpenCV native library", e);
+            System.exit(1);
+        }
         
         // Launch JavaFX application
         launch(args);

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FusionAI implements GestureDetector.GestureDetectionListener, DictionaryManager.DictionaryListener {
+public class FusionAI implements GestureDetector.GestureDetectionListener {
     private static final Logger logger = LoggerFactory.getLogger(FusionAI.class);
     private static final double CONFIDENCE_THRESHOLD = 0.7;
 

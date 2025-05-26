@@ -1,5 +1,8 @@
 package com.lsa.interpreter.ui;
 
+import com.lsa.interpreter.logic.DictionaryManager;
+import java.util.List;
+
 import com.lsa.interpreter.logic.FusionAI;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
@@ -27,6 +30,12 @@ public class MainWindow {
 
         // Set up communication between components
         setupComponentInteractions();
+        
+        // Set up dictionary listener
+        dictionaryUI.addDictionaryListener(dictionary -> {
+            // Forward dictionary updates to FusionAI if needed
+            logger.info("Dictionary updated with {} entries", dictionary.size());
+        });
     }
 
     public void show(Stage stage) {
@@ -65,6 +74,6 @@ public class MainWindow {
     private void setupComponentInteractions() {
         // Set up listeners and event handlers between components
         fusionAI.addListener(historySidebar);
-        dictionaryUI.addDictionaryListener(fusionAI);
+        // Dictionary updates are handled through lambda in constructor
     }
 }

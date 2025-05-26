@@ -1,6 +1,13 @@
 package com.lsa.interpreter.logic;
 
-import org.opencv.core.*;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfInt;
+import org.opencv.core.MatOfInt4;
+import org.opencv.core.MatOfPoint;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +23,7 @@ public class GestureDetector {
     private final MatOfPoint hull;
     private final MatOfInt hullIndices;
     private final MatOfInt4 defects;
+    private MatOfPoint tempHull;
 
     public GestureDetector() {
         this.listeners = new ArrayList<>();
@@ -23,6 +31,7 @@ public class GestureDetector {
         this.hull = new MatOfPoint();
         this.hullIndices = new MatOfInt();
         this.defects = new MatOfInt4();
+        this.tempHull = new MatOfPoint();
         
         logger.info("GestureDetector initialized");
     }
@@ -81,8 +90,22 @@ public class GestureDetector {
 
     private void processHandContour(MatOfPoint contour, Mat frame) {
         // Find convex hull
-        Imgproc.convexHull(contour, hull);
-        Imgproc.convexHull(contour, hullIndices);
+        MatOfInt tempHullIndices = new MatOfInt();
+        Imgproc.convexHull(contour, tempHullIndices);
+        
+        // Convert indices to points
+        Point[] points = contour.toArray();
+        Point[] hullPoints = new Point[tempHullIndices.toArray().length];
+        for (int i = 0; i < tempHullIndices.toArray().length; i++) {
+            hullPoints[i] = points[tempHullIndices.toArray()[i]];
+        }
+        
+        // Store results
+        hull.fromArray(hullPoints);
+        hullIndices.fromArray(tempHullIndices.toArray());
+        
+        // Clean up
+        tempHullIndices.release();
 
         // Find convexity defects
         if (contour.total() > 3) {
